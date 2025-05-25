@@ -1,0 +1,106 @@
+model:
+  type: AbEgDiffuser
+  node_feat_dim: 128
+  edge_feat_dim: 64
+  single_present: false
+  k_neighbors: 9
+  esm:
+    enabled: true
+    embed_dim: 2560
+    num_layers: 36
+    dropout_rate: 0.1
+    norm: true
+    esm_embed:
+      sep_pad_num: 24
+      repr_layer:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+        - 7
+        - 8
+        - 9
+        - 10
+        - 11
+        - 12
+        - 13
+        - 14
+        - 15
+        - 16
+        - 17
+        - 18
+        - 19
+        - 20
+        - 21
+        - 22
+        - 23
+        - 24
+        - 25
+        - 26
+        - 27
+        - 28
+        - 29
+        - 30
+        - 31
+        - 32
+        - 33
+        - 34
+        - 35
+        - 36
+      model_path: ./trained_models/esm/esm2_t36_3B_UR50D.pt
+  diffusion:
+    num_steps: 100
+    eps_net_opt:
+      e_num_layers: 6
+      i_num_layers: 6
+  train_structure: true
+  train_sequence: true
+
+train:
+  use_amp: false
+  loss_weights:
+    rot: 1.0
+    pos: 1.0
+    seq: 1.0
+  max_iters: 250_000
+  val_freq: 1000
+  batch_size: 16
+  seed: 2025
+  max_grad_norm: 100.0
+  optimizer:
+    type: adam
+    lr: 1.e-4
+    weight_decay: 0.0
+    beta1: 0.9
+    beta2: 0.999
+  scheduler:
+    type: plateau
+    factor: 0.8
+    patience: 8
+    min_lr: 5.e-6
+
+dataset:
+  train:
+    type: sabdab
+    summary_path: ./data/sabdab_summary_all.tsv
+    chothia_dir: ./data/all_structures/chothia
+    processed_dir: ./data/processed
+    split: train
+    transform:
+    - type: mask_single_cdr
+    - type: merge_chains
+    - type: patch_around_anchor
+  val:
+    type: sabdab
+    summary_path: ./data/sabdab_summary_all.tsv
+    chothia_dir: ./data/all_structures/chothia
+    processed_dir: ./data/processed
+    split: val
+    transform:
+    - type: mask_single_cdr
+      selection: CDR3
+    - type: merge_chains
+    - type: patch_around_anchor

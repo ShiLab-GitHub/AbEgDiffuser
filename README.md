@@ -1,5 +1,5 @@
 # AbEgDiffuser
-This repository contains the data and python script in support of the manuscript: Co-design of antibody sequences and structures via equivariant graph neural networks and generative diffusion models.
+This repository contains the data and python script in support of the manuscript: AbEgDiffuser: Antibody sequence-structure co-design with equivariant graph neural networks and diffusion models.
 _ _ _ _
 
 ## 1.  Requirement

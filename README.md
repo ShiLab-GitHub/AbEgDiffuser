@@ -1,4 +1,10 @@
+This paper has been published as "AbEgDiffuser: Antibody Sequence-Structure Codesign with Equivariant Graph Neural Networks and Diffusion Models" (DOI:10.1021/acs.jctc.5c00990).
+
+https://pubs.acs.org/doi/10.1021/acs.jctc.5c00990 
+
 # AbEgDiffuser
+AbEgDiffuser, a deep generative framework that enables the codesign of antibody sequences and structures conditioned on target antigens. It integrates diffusion models with equivariant graph neural networks and further incorporates evolutionary constraints. During forward diffusion, amino acid sequences, Cα atom coordinates, and residue orientations are progressively corrupted toward a prior distribution. In reverse, a bilevel equivariant graph neural network captures both residue- and atom-level interactions to reconstruct functional antibodies. Evolutionary plausibility is enforced by encoding noisy sequences with the pretrained protein language model ESM-2. Extensive experiments on de novo antibody design and optimization tasks demonstrate that AbEgDiffuser generates antibodies with accurate sequences and structures and high binding affinity, outperforming existing design methods.
+
 This repository contains the data and python script in support of the manuscript: AbEgDiffuser: Antibody sequence-structure co-design with equivariant graph neural networks and diffusion models.
 _ _ _ _
 

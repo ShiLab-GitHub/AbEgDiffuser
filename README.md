@@ -1,6 +1,4 @@
-Paper: "AbEgDiffuser: Antibody Sequence-Structure Codesign with Equivariant Graph Neural Networks and Diffusion Models" (DOI: 10.1021/acs.jctc.5c00990)
-
-Published in J Chem Theory Comput: https://pubs.acs.org/doi/10.1021/acs.jctc.5c00990
+Our paper ["AbEgDiffuser: Antibody Sequence-Structure Codesign with Equivariant Graph Neural Networks and Diffusion Models"](https://doi.org/10.1021/acs.jctc.5c00990). published in J Chem Theory Comput: https://pubs.acs.org/doi/10.1021/acs.jctc.5c00990
 
 
 # AbEgDiffuser
